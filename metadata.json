@@ -1,0 +1,8 @@
+{
+  "name": "Remix Absensi Digital PMR",
+  "description": "Sistem Absensi Digital Palang Merah Remaja (PMR) modern dengan Portal Absensi bertanda tangan digital dan Portal Admin Rekap.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

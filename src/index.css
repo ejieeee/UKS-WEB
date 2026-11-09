@@ -1,0 +1,242 @@
+@import "tailwindcss";
+
+/* =========================================================================
+   3 DISTINCT THEMES SYSTEM (Vintage / Clean Pure White / Botanical Earth Tone)
+   ========================================================================= */
+
+/* 1. TEMA VINTAGE (Kertas Klasik - Default) */
+:root,
+html,
+html[data-theme="vintage"],
+body[data-theme="vintage"] {
+  --color-canvas: #F8F6F0;
+  --color-canvas-pattern: #E8E2D5;
+  --color-card: #FFFDF8;
+  --color-subtle: #F0ECE1;
+  --color-border-main: #EAE3D7;
+  --color-border-dark: #D8D1C3;
+  --color-text-main: #343630;
+  --color-text-muted: #85847D;
+  --color-accent-primary: #984B50;
+  --color-accent-hover: #853F44;
+  --color-accent-secondary: #77846B;
+  --color-accent-secondary-bg: rgba(119, 132, 107, 0.15);
+  --color-badge-pengurus-bg: rgba(152, 75, 80, 0.10);
+  --color-badge-pengurus-border: rgba(152, 75, 80, 0.35);
+  --color-badge-pengurus-text: #984B50;
+  --color-gold: #634914;
+  --color-gold-border: rgba(212, 175, 55, 0.6);
+  --color-gold-bg: #FFFDF8;
+}
+
+/* 2. TEMA PUTIH BERSIH (Clean Pure White) */
+html[data-theme="clean"],
+body[data-theme="clean"] {
+  --color-canvas: #F8FAFC;
+  --color-canvas-pattern: #CBD5E1;
+  --color-card: #FFFFFF;
+  --color-subtle: #F1F5F9;
+  --color-border-main: #E2E8F0;
+  --color-border-dark: #CBD5E1;
+  --color-text-main: #0F172A;
+  --color-text-muted: #64748B;
+  --color-accent-primary: #C5221F; /* Crisp Red */
+  --color-accent-hover: #991B1B;
+  --color-accent-secondary: #0F766E; /* Sleek Teal */
+  --color-accent-secondary-bg: rgba(15, 118, 110, 0.12);
+  --color-badge-pengurus-bg: rgba(197, 34, 31, 0.08);
+  --color-badge-pengurus-border: rgba(197, 34, 31, 0.30);
+  --color-badge-pengurus-text: #C5221F;
+  --color-gold: #854D0E;
+  --color-gold-border: rgba(202, 138, 4, 0.50);
+  --color-gold-bg: #FEFCE8;
+}
+
+/* 3. TEMA BOTANIKAL (Botanical Earth Tone - Forest Moss & Warm Terracotta) */
+html[data-theme="botanical"],
+body[data-theme="botanical"] {
+  --color-canvas: #E3E9DC;
+  --color-canvas-pattern: #C1CBB6;
+  --color-card: #EEF3E8;
+  --color-subtle: #D8E1CE;
+  --color-border-main: #BFCCB3;
+  --color-border-dark: #A5B695;
+  --color-text-main: #162B1F;
+  --color-text-muted: #4B6354;
+  --color-accent-primary: #24583F; /* Deep Forest Moss */
+  --color-accent-hover: #19432F;
+  --color-accent-secondary: #A0522D; /* Warm Earthy Terracotta */
+  --color-accent-secondary-bg: rgba(160, 82, 45, 0.12);
+  --color-badge-pengurus-bg: rgba(36, 88, 63, 0.12);
+  --color-badge-pengurus-border: rgba(36, 88, 63, 0.35);
+  --color-badge-pengurus-text: #24583F;
+  --color-gold: #5E4315;
+  --color-gold-border: rgba(184, 134, 11, 0.55);
+  --color-gold-bg: #F7F3E6;
+}
+
+:root {
+  font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  color-scheme: light;
+  background-color: var(--color-canvas);
+  color: var(--color-text-main);
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background-color: var(--color-canvas);
+  color: var(--color-text-main);
+  -webkit-font-smoothing: antialiased;
+  background-image: radial-gradient(var(--color-canvas-pattern) 0.75px, transparent 0.75px);
+  background-size: 24px 24px;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+/* Typography Helpers */
+.font-serif {
+  font-family: 'Playfair Display', Georgia, Cambria, serif;
+}
+
+.font-editorial {
+  font-family: 'Lora', Georgia, serif;
+}
+
+.font-sans {
+  font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* =========================================================================
+   COMPREHENSIVE THEME OVERRIDES FOR CLEAN & BOTANICAL THEMES
+   ========================================================================= */
+
+/* Background Canvas */
+html[data-theme="clean"] [class*="bg-[#F8F6F0]"],
+html[data-theme="botanical"] [class*="bg-[#F8F6F0]"] {
+  background-color: var(--color-canvas) !important;
+}
+
+/* Card & Surface Elements */
+html[data-theme="clean"] [class*="bg-[#FFFDF8]"],
+html[data-theme="botanical"] [class*="bg-[#FFFDF8]"] {
+  background-color: var(--color-card) !important;
+}
+
+/* Primary Text */
+html[data-theme="clean"] [class*="text-[#343630]"],
+html[data-theme="botanical"] [class*="text-[#343630]"] {
+  color: var(--color-text-main) !important;
+}
+
+/* Muted / Secondary Text */
+html[data-theme="clean"] [class*="text-[#85847D]"],
+html[data-theme="botanical"] [class*="text-[#85847D]"] {
+  color: var(--color-text-muted) !important;
+}
+
+/* Borders */
+html[data-theme="clean"] [class*="border-[#EAE3D7]"],
+html[data-theme="botanical"] [class*="border-[#EAE3D7]"] {
+  border-color: var(--color-border-main) !important;
+}
+
+html[data-theme="clean"] [class*="border-[#D8D1C3]"],
+html[data-theme="botanical"] [class*="border-[#D8D1C3]"] {
+  border-color: var(--color-border-dark) !important;
+}
+
+html[data-theme="clean"] [class*="divide-[#EAE3D7]"] > :not([hidden]) ~ :not([hidden]),
+html[data-theme="botanical"] [class*="divide-[#EAE3D7]"] > :not([hidden]) ~ :not([hidden]) {
+  border-color: var(--color-border-main) !important;
+}
+
+/* Subtle Chips & Buttons */
+html[data-theme="clean"] [class*="bg-[#EAE3D7]"],
+html[data-theme="botanical"] [class*="bg-[#EAE3D7]"] {
+  background-color: var(--color-subtle) !important;
+}
+
+/* Primary Action Buttons & Highlights */
+html[data-theme="clean"] button[class*="bg-[#984B50]"],
+html[data-theme="botanical"] button[class*="bg-[#984B50]"],
+html[data-theme="clean"] [class*="bg-[#984B50]"]:not([class*="/"]),
+html[data-theme="botanical"] [class*="bg-[#984B50]"]:not([class*="/"]) {
+  background-color: var(--color-accent-primary) !important;
+}
+
+html[data-theme="clean"] [class*="hover:bg-[#853f44]"]:hover,
+html[data-theme="botanical"] [class*="hover:bg-[#853f44]"]:hover {
+  background-color: var(--color-accent-hover) !important;
+}
+
+html[data-theme="clean"] [class*="text-[#984B50]"],
+html[data-theme="botanical"] [class*="text-[#984B50]"] {
+  color: var(--color-accent-primary) !important;
+}
+
+html[data-theme="clean"] [class*="border-[#984B50]"],
+html[data-theme="botanical"] [class*="border-[#984B50]"] {
+  border-color: var(--color-accent-primary) !important;
+}
+
+html[data-theme="clean"] [class*="bg-[#984B50]/"],
+html[data-theme="botanical"] [class*="bg-[#984B50]/"] {
+  background-color: var(--color-badge-pengurus-bg) !important;
+}
+
+html[data-theme="clean"] [class*="border-[#984B50]/"],
+html[data-theme="botanical"] [class*="border-[#984B50]/"] {
+  border-color: var(--color-badge-pengurus-border) !important;
+}
+
+/* Secondary Badges (Sage / Teal / Terracotta) */
+html[data-theme="clean"] [class*="text-[#77846B]"],
+html[data-theme="botanical"] [class*="text-[#77846B]"] {
+  color: var(--color-accent-secondary) !important;
+}
+
+html[data-theme="clean"] [class*="bg-[#77846B]"],
+html[data-theme="botanical"] [class*="bg-[#77846B]"] {
+  background-color: var(--color-accent-secondary) !important;
+}
+
+html[data-theme="clean"] [class*="bg-[#77846B]/"],
+html[data-theme="botanical"] [class*="bg-[#77846B]/"],
+html[data-theme="clean"] [class*="bg-[#A5B19B]/"],
+html[data-theme="botanical"] [class*="bg-[#A5B19B]/"] {
+  background-color: var(--color-accent-secondary-bg) !important;
+}
+
+html[data-theme="clean"] [class*="border-[#77846B]/"],
+html[data-theme="botanical"] [class*="border-[#77846B]/"],
+html[data-theme="clean"] [class*="border-[#A5B19B]/"],
+html[data-theme="botanical"] [class*="border-[#A5B19B]/"] {
+  border-color: var(--color-accent-secondary) !important;
+}
+
+/* Gold Jabatan Badge Overrides */
+html[data-theme="clean"] [class*="text-[#634914]"],
+html[data-theme="botanical"] [class*="text-[#634914]"] {
+  color: var(--color-gold) !important;
+}
+
+html[data-theme="clean"] [class*="border-[#D4AF37]/"],
+html[data-theme="botanical"] [class*="border-[#D4AF37]/"] {
+  border-color: var(--color-gold-border) !important;
+}
+
+/* Custom delicate scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-canvas);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-border-dark);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-text-muted);
+}
